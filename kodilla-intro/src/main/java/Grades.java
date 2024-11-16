@@ -21,6 +21,7 @@ public class Grades {
         } else {
             System.out.println("Grades have not been added yet");
         }
+        return 0;
     }
 
     public int averageGrade() {
@@ -34,5 +35,6 @@ public class Grades {
     } else {
             System.out.println("Grades have not been added yet");
         }
-
+        return 0;
+    }
 }
