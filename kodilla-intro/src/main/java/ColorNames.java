@@ -34,7 +34,7 @@ public class ColorNames {
                 case "Y": return "Yellow";
                 case "Z": return "Zomp";
                 default:
-                    System.out.println("I don't know this letter. Try different one.");
+                    System.out.println ("I don't know this letter. Try different one.");
             }
         }
     }

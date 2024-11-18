@@ -31,28 +31,24 @@ public class Notebook {
     }
 
     public void checkPriceAndYear(){
-        if (this.price > 3000) {
-            if (this.year > 2020){
+        if (this.price > 3000 && this.year > 2020) {
                 System.out.println("This notebook is new and expensive");
-            } else if (this.year > 2015) {
+            } else if (this.price > 3000 && this.year > 2015 && this.year < 2020) {
                 System.out.println("This notebook is still good and expensive");
-            } else {
+            } else if (this.price > 3000 && this.year < 2015) {
                 System.out.println("This notebook is old and expensive");
-            }
-        } else if (this.price > 1000) {
-            if (this.year > 2020){
+            } else if (this.price > 1000 && this.price < 3000 && this.year > 2020) {
                 System.out.println("This notebook is new and has a good price");
-            } else if (this.year > 2015) {
+            } else if (this.price > 1000 && this.price < 3000 && this.year > 2015 && this.year < 2020) {
                 System.out.println("This notebook is still good and has a good price");
-            } else {
+            } else if (this.price > 1000 && this.price < 3000 && this.year < 2015) {
                 System.out.println("This notebook is old and has a good price");
-            }
-        } else if (this.year > 2020){
-            System.out.println("This notebook is cheap and new");
-        } else if (this.year > 2015) {
-            System.out.println("This notebook is cheap and still good");
-        } else {
-            System.out.println("This notebook is cheap and old");
+            } else if (this.price < 1000 && this.year > 2020){
+                System.out.println("This notebook is cheap and new");
+            } else if (this.price < 1000 && this.year > 2015 && this.year < 2020) {
+                System.out.println("This notebook is cheap and still good");
+            } else {
+                System.out.println("This notebook is cheap and old");
         }
     }
 }
