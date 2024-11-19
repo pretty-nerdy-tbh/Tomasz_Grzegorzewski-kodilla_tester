@@ -46,7 +46,7 @@ public class Notebook {
             } else if (this.price < 1000 && this.year > 2020){
                 System.out.println("This notebook is cheap and new");
             } else if (this.price < 1000 && this.year > 2015 && this.year < 2020) {
-                System.out.println("This notebook is cheap and still good");
+                System.out.println("This notebook is cheap and still go0od");
             } else {
                 System.out.println("This notebook is cheap and old");
         }
