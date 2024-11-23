@@ -6,6 +6,8 @@ public class Application {
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
+        double c = -6;
+
         int sumResult = calculator.sum(a, b);
         boolean correct = ResultChecker.assertEquals(13, sumResult);
         if (correct) {
@@ -22,12 +24,12 @@ public class Application {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        int squaredResult = calculator.squared(a);
-        boolean correct2 = ResultChecker.assertEquals(25, squaredResult);
+        double squaredResult = calculator.squared(c);
+        boolean correct2 = ResultChecker.assertEqualsSquared(36, squaredResult);
         if (correct2) {
-            System.out.println("Metoda squared działa poprawnie dla liczby " + a);
+            System.out.println("Metoda squared działa poprawnie dla liczby " + c);
         } else {
-            System.out.println("Metoda squared nie działa poprawnie dla liczby " + a);
+            System.out.println("Metoda squared nie działa poprawnie dla liczby " + c);
         }
     }
 }
