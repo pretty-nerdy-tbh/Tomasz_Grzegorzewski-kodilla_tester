@@ -6,8 +6,8 @@ public class Reno implements Car{
     private int breaking;
     private int speed;
 
-    public Reno(){
-        this.acceleration = 20;
+    public Reno(int acceleration){
+        this.acceleration = acceleration;
         this.breaking = 11;
         this.speed = 0;
     }

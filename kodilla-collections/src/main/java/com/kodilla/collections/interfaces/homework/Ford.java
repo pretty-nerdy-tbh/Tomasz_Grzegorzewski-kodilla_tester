@@ -6,8 +6,8 @@ public class Ford implements Car{
     private int breaking;
     private int speed;
 
-    public Ford(){
-        this.acceleration = 35;
+    public Ford(int acceleration){
+        this.acceleration = acceleration;
         this.breaking = 10;
         this.speed = 0;
     }
