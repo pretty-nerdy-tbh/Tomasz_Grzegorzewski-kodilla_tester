@@ -1,5 +1,7 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
+
 public class Ford implements Car{
 
     private int acceleration;
@@ -29,5 +31,18 @@ public class Ford implements Car{
         } else {
             this.speed = 0;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ford ford = (Ford) o;
+        return acceleration == ford.acceleration && breaking == ford.breaking && speed == ford.speed;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(acceleration, breaking, speed);
     }
 }
