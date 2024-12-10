@@ -34,7 +34,7 @@ class FlightFinderTestSuite {
         //then
         List<Flight> expectedList = new ArrayList<>();
         expectedList.add( new Flight("New York", "Taipei"));
-        expectedListgit.add( new Flight("Warsaw", "Taipei"));
+        expectedList.add( new Flight("Warsaw", "Taipei"));
         assertEquals(expectedList, result);
     }
 
