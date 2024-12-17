@@ -22,9 +22,7 @@ public class Application {
         students.add(new Student("Zofia", profSipowicz));
 
         for (Student student : students){
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-            String teacherName = optionalTeacher.orElse(new Teacher("<undefined>")).getName();
-            System.out.println("uczeń: " + student.getName() + ", nauczyciel: " + teacherName);
+            System.out.println("uczeń: " + student.getName() + ", nauczyciel: " + student.getTeacherName());
         }
     }
 }
