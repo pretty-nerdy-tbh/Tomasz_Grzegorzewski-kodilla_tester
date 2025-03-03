@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class AllegroTestingApp {
 
@@ -15,19 +17,26 @@ public class AllegroTestingApp {
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl");
 
-        Thread.sleep(2000);
+        WebElement cookiesPopUp = driver.findElement(By.cssSelector("body > div > div > div > div > div > div >  button"));
+        cookiesPopUp.click();
 
-        WebElement categoryCombo = driver.findElement(By.xpath("//*[@data-role=\"search-form\"]/select[1]"));
+
+        WebElement categoryCombo = driver.findElement(By.cssSelector("form > div > div > select"));
         Select categorySelect = new Select(categoryCombo);
-        Thread.sleep(1678);
-        categorySelect.selectByValue("Elektronika");
+        categorySelect.selectByIndex(4);
 
-        Thread.sleep(1778);
-        WebElement searchElement = driver.findElement(By.xpath("//*[@data-role=\"search-form\"]/input[0]"));
-        Thread.sleep(1432);
+        WebElement searchElement = driver.findElement(By.cssSelector("div > form > input"));
         searchElement.sendKeys("Mavic mini");
-        Thread.sleep(839);
         searchElement.submit();
+
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("article > div")));
+
+        List<WebElement> element = driver.findElements(By.cssSelector("article > div"));
+        for (WebElement product : element) {
+            System.out.println(product.getText());
+        }
+
 
     }
 }
