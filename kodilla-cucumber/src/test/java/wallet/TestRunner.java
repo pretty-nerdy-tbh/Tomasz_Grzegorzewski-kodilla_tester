@@ -1,12 +1,10 @@
-package homework;
+package wallet;
 
 import org.junit.platform.suite.api.*;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("homework")
+@SelectClasspathResource("wallet")
 public class TestRunner {
 
 }
-
-
