@@ -8,7 +8,7 @@ public class Cashier {
     }
 
     public void withdraw(Wallet wallet, int amount) {
-        if (wallet.getBalance() >= amount) {
+        if (wallet.getBalance() >= amount && wallet.getBalance() > 0 ) {
             cashSlot.dispense(amount);
         }
     }
