@@ -10,4 +10,8 @@ public class CashSlot {
     public void dispense(int amount) {
         if (amount > 0){this.contents = amount;}
     }
+
+    public void clearContents(){
+        this.contents = 0;
+    }
 }
