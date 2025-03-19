@@ -22,6 +22,7 @@ class ShopTestSuite {
     Order order8 = new Order(60.75, LocalDateTime.parse("2024-12-29T11:00:00"), "blackPlum");
     Order order9 = new Order(12.30, LocalDateTime.parse("2024-12-30T13:20:00"), "whitePear");
     Order order10 = new Order(99.99, LocalDateTime.parse("2024-12-31T21:45:00"), "goldMango");
+    Order order11 = new Order(23.20, LocalDateTime.parse("2024-12-22T14:30:00"), "redOnion");
 
 
     @BeforeEach
@@ -78,5 +79,14 @@ class ShopTestSuite {
         assertThrows(InvalidOrderException.class, () -> shop.addOrder(invalidLogin));
     }
 
+    @Test
+    void toStringShoulReturnRightString() {
+        assertEquals("Order{price=23.2, date=2024-12-22T14:30, login='redOnion'}", order11.toString());
+    }
+
+    @Test
+    void equalsShouldReturnTrue(){
+        assertTrue(order1.equals(order11));
+    }
 
 }
